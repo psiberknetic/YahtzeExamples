@@ -84,5 +84,47 @@ namespace TestableYahtzeTests
 
             yahzteCheck.Should().Throw<ArgumentException>();
         }
+
+        [TestMethod]
+        public void IsLargeStraight_IsLargeStraight_ReturnsTrue()
+        {
+            var dice = new[]{
+                new TestingD6(1),
+                new TestingD6(2),
+                new TestingD6(3),
+                new TestingD6(4),
+                new TestingD6(5)
+            };
+
+            dice.IsLargeStraight().Should().BeTrue();
+        }
+
+        [TestMethod]
+        public void IsLargeStraight_IsOtherLargeStraight_ReturnsTrue()
+        {
+            var dice = new[]{
+                new TestingD6(6),
+                new TestingD6(5),
+                new TestingD6(4),
+                new TestingD6(3),
+                new TestingD6(2)
+            };
+
+            dice.IsLargeStraight().Should().BeTrue();
+        }
+
+        [TestMethod]
+        public void IsLargeStraight_IsNotLargeStraight_ReturnsFalse()
+        {
+            var dice = new[]{
+                new TestingD6(1),
+                new TestingD6(1),
+                new TestingD6(3),
+                new TestingD6(4),
+                new TestingD6(5)
+            };
+
+            dice.IsLargeStraight().Should().BeFalse();
+        }
     }
 }
