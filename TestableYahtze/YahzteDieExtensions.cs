@@ -19,7 +19,12 @@ namespace TestableYahtze
 
         public static bool IsYahtze(this IEnumerable<IDie> dice)
         {
-            throw new NotImplementedException();
+            if (!dice.IsValidYahtzeRoll())
+            {
+                throw new ArgumentException("A Yahzte roll must be a 5d6");
+            }
+
+            return dice.GroupBy(d => d.Value).Count() == 1;
         }
 
         public static bool IsLargeStraight(this IEnumerable<IDie> dice)
