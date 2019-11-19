@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahtzeOriginal", "YahzeeOri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestableYahtze", "TestableYahtze\TestableYahtze.csproj", "{BB66BD4E-851D-4685-99C7-C20178729098}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestableYahtzeTests", "TestableYahtzeTests\TestableYahtzeTests.csproj", "{0A34E630-B163-4B09-910E-3B7EC8441B4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BB66BD4E-851D-4685-99C7-C20178729098}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB66BD4E-851D-4685-99C7-C20178729098}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB66BD4E-851D-4685-99C7-C20178729098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A34E630-B163-4B09-910E-3B7EC8441B4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A34E630-B163-4B09-910E-3B7EC8441B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A34E630-B163-4B09-910E-3B7EC8441B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A34E630-B163-4B09-910E-3B7EC8441B4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
