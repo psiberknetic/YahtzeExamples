@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace TestableYahtze
@@ -8,7 +9,12 @@ namespace TestableYahtze
     {
         public static bool IsValidYahtzeRoll(this IEnumerable<IDie> dice)
         {
-            throw new NotImplementedException();
+            if (dice.Count() != 5 || dice.Any(d => d.Sides != 6))
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public static bool IsYahtze(this IEnumerable<IDie> dice)
