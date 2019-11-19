@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 
 namespace TestableYahtze
 {
@@ -7,8 +8,6 @@ namespace TestableYahtze
     {
         static void Main(string[] args)
         {
-            //A bunch of Yahtze code...
-            //Player has rolled dice and now has the dice they'd like to score
 
         }
     }
