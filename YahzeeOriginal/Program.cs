@@ -34,8 +34,8 @@ namespace YahzeeOriginal
 
         private static bool IsFullHouse(IEnumerable<Die> dice)
         {
-            var dieGroups = dice.GroupBy(d => d.Value);
-            if (dieGroups.Count() == 2 && dieGroups.Select(g => g.Count()).OrderBy(i => i).ToArray() == new int[] { 2, 3 })
+            var dieGroupCounts = dice.GroupBy(d => d.Value).Select(g => g.Count());
+            if (dieGroupCounts.Contains(2) && dieGroupCounts.Contains(3))
             {
                 return true;
             }
