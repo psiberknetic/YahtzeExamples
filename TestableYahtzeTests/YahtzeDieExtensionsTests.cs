@@ -71,7 +71,7 @@ namespace TestableYahtzeTests
         }
 
         [TestMethod]
-        public void IsYahtze_InvalideYahtzeRoll_ThrowsException()
+        public void IsYahtze_InvalidYahtzeRoll_ThrowsException()
         {
             var dice = new[]{
                 new TestingD6(6),
