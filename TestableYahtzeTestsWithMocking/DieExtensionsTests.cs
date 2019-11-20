@@ -142,5 +142,28 @@ namespace TestableYahtzeTestsWithMocking
 
             dice.GetDieCountBySide(1).Should().Be(0);
         }
+
+        [TestMethod]
+        public void GetMaxValue_NoDice_ReturnsZero()
+        {
+            var dice = Enumerable.Empty<IDie>();
+
+            dice.GetMaxValue().Should().Be(0);
+        }
+
+        [TestMethod]
+        public void GetMaxValue_ListOfSixDice_Returns36()
+        {
+            var dice = new[]{
+                new Die(),
+                new Die(),
+                new Die(),
+                new Die(),
+                new Die(),
+                new Die()
+            };
+
+            dice.GetMaxValue().Should().Be(36);
+        }
     }
 }
