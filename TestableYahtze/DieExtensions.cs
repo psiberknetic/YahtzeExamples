@@ -18,7 +18,10 @@ namespace TestableYahtzeTestsWithMocking
 
         public static int GetDieCountBySide(this IEnumerable<IDie> dice, int side)
         {
-            throw new NotImplementedException();
+            return dice.GroupBy(d => d.Value)
+                .Where(g => g.Key.Equals(side))
+                .Select(g => g.Count())
+                .FirstOrDefault();
         }
     }
 }
