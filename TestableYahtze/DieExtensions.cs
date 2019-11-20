@@ -23,5 +23,10 @@ namespace TestableYahtzeTestsWithMocking
                 .Select(g => g.Count())
                 .FirstOrDefault();
         }
+
+        public static int GetMaxValue(this IEnumerable<IDie> dice)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
