@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TestableYahtze;
 
@@ -9,7 +10,10 @@ namespace TestableYahtzeTestsWithMocking
     {
         public static int GetTotalBySide(this IEnumerable<IDie> dice, int side)
         {
-            throw new NotImplementedException();
+            var sideGroup = dice.GroupBy(d => d.Value)
+                .FirstOrDefault(g => g.Key.Equals(side));
+
+            return sideGroup?.Key * sideGroup?.Count() ?? 0;
         }
 
         public static int GetDieCountBySide(this IEnumerable<IDie> dice, int side)
