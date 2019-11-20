@@ -17,5 +17,15 @@ namespace TestableYahtzeTestsWithMocking
 
             return d6.Object;
         }
+
+        internal static IDie CreateMockDie(int sides, int value)
+        {
+            var d6 = new Mock<IDie>();
+            d6.SetupGet(d => d.Sides).Returns(sides);
+            d6.SetupGet(d => d.Value).Returns(value);
+            d6.SetupGet(d => d.Id).Returns(Guid.NewGuid());
+
+            return d6.Object;
+        }
     }
 }
