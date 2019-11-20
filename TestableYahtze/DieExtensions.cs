@@ -26,7 +26,7 @@ namespace TestableYahtzeTestsWithMocking
 
         public static int GetMaxValue(this IEnumerable<IDie> dice)
         {
-            throw new NotImplementedException();
+            return dice.FirstOrDefault()?.Sides * dice.Count() ?? 0;
         }
     }
 }
