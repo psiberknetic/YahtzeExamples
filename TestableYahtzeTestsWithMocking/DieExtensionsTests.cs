@@ -37,6 +37,24 @@ namespace TestableYahtzeTestsWithMocking
         }
 
         [TestMethod]
+        public void GetTotalBySide_MultipleTypesOfDice_ReturnsCorrectValue()
+        {
+            var dice = new[]{
+                DieTestMockingHelper.CreateMockD6(6),
+                DieTestMockingHelper.CreateMockDie(4,2),
+                DieTestMockingHelper.CreateMockD6(2),
+                DieTestMockingHelper.CreateMockD6(4),
+                DieTestMockingHelper.CreateMockD6(6),
+                DieTestMockingHelper.CreateMockD6(2),
+                DieTestMockingHelper.CreateMockD6(5),
+                DieTestMockingHelper.CreateMockDie(8,2),
+                DieTestMockingHelper.CreateMockDie(4,1)
+            };
+
+            dice.GetTotalBySide(2).Should().Be(8);
+        }
+
+        [TestMethod]
         public void GetTotalBySide_MultipleDiceSideNotRepresented_ReturnsZero()
         {
             var dice = new[]{
