@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TestableYahtze;
 
-namespace TestableYahtze
+namespace TestableYahtzeTestsWithMocking
 {
     public static class DieExtensions
     {
