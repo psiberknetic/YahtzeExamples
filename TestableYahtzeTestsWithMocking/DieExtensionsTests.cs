@@ -76,5 +76,71 @@ namespace TestableYahtzeTestsWithMocking
 
             dice.GetTotalBySide(5).Should().Be(0);
         }
+
+        [TestMethod]
+        public void GetDieCountBySide_NoDice_ReturnsZero()
+        {
+            var dice = Enumerable.Empty<IDie>();
+
+            dice.GetDieCountBySide(5).Should().Be(0);
+        }
+
+        [TestMethod]
+        public void GetDieCountBySide_SingleDieThatMatches_ReturnsOne()
+        {
+            var dice = new[]{
+                DieTestMockingHelper.CreateMockD6(6)
+            };
+
+            dice.GetDieCountBySide(6).Should().Be(1);
+        }
+
+        [TestMethod]
+        public void GetDieCountBySide_MultipleDice_ReturnsCorrectCount()
+        {
+            var dice = new[]{
+                DieTestMockingHelper.CreateMockD6(6),
+                DieTestMockingHelper.CreateMockD6(2),
+                DieTestMockingHelper.CreateMockD6(4),
+                DieTestMockingHelper.CreateMockD6(6),
+                DieTestMockingHelper.CreateMockD6(2),
+                DieTestMockingHelper.CreateMockD6(5)
+            };
+
+            dice.GetDieCountBySide(6).Should().Be(2);
+        }
+
+        [TestMethod]
+        public void GetDieCountBySide_MultipleTypesOfDice_ReturnsCorrectValue()
+        {
+            var dice = new[]{
+                DieTestMockingHelper.CreateMockD6(6),
+                DieTestMockingHelper.CreateMockDie(4,2),
+                DieTestMockingHelper.CreateMockD6(2),
+                DieTestMockingHelper.CreateMockD6(4),
+                DieTestMockingHelper.CreateMockD6(6),
+                DieTestMockingHelper.CreateMockD6(2),
+                DieTestMockingHelper.CreateMockD6(5),
+                DieTestMockingHelper.CreateMockDie(8,2),
+                DieTestMockingHelper.CreateMockDie(4,1)
+            };
+
+            dice.GetDieCountBySide(4).Should().Be(1);
+        }
+
+        [TestMethod]
+        public void GetDieCountBySide_MultipleDiceSideNotRepresented_ReturnsZero()
+        {
+            var dice = new[]{
+                DieTestMockingHelper.CreateMockD6(6),
+                DieTestMockingHelper.CreateMockD6(2),
+                DieTestMockingHelper.CreateMockD6(4),
+                DieTestMockingHelper.CreateMockD6(6),
+                DieTestMockingHelper.CreateMockD6(2),
+                DieTestMockingHelper.CreateMockD6(5)
+            };
+
+            dice.GetDieCountBySide(1).Should().Be(0);
+        }
     }
 }
