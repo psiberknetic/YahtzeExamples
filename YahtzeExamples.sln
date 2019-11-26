@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestableYahtze", "TestableY
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestableYahtzeTests", "TestableYahtzeTests\TestableYahtzeTests.csproj", "{0A34E630-B163-4B09-910E-3B7EC8441B4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestableYahtzeTestsWithMocking", "TestableYahtzeTestsWithMocking\TestableYahtzeTestsWithMocking.csproj", "{7C7C8E7A-D1B1-487A-A667-770D754C1856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestableYahtzeTestsWithMocking", "TestableYahtzeTestsWithMocking\TestableYahtzeTestsWithMocking.csproj", "{7C7C8E7A-D1B1-487A-A667-770D754C1856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahtzeSpecByExampleTests", "YahtzeSpecByExampleTests\YahtzeSpecByExampleTests.csproj", "{C2DD7314-A645-435E-ACBF-D827E5DEBDA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7C7C8E7A-D1B1-487A-A667-770D754C1856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C7C8E7A-D1B1-487A-A667-770D754C1856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C7C8E7A-D1B1-487A-A667-770D754C1856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2DD7314-A645-435E-ACBF-D827E5DEBDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2DD7314-A645-435E-ACBF-D827E5DEBDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2DD7314-A645-435E-ACBF-D827E5DEBDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2DD7314-A645-435E-ACBF-D827E5DEBDA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -51,7 +51,15 @@ namespace TestableYahtze
 
         public static bool IsFullHouse(this IEnumerable<IDie> dice)
         {
-            throw new NotImplementedException();
+            if (!dice.IsValidYahtzeRoll())
+            {
+                throw new ArgumentException("A Yahzte roll must be a 5d6");
+            }
+
+            var dieGroups = dice.GroupBy(d => d.Value);
+            return (dieGroups.Count() == 2 && dieGroups.Select(dg => dg.Count())
+                                                       .OrderBy(c => c)
+                                                       .SequenceEqual(new[] { 2, 3 }));
         }
 
         public static bool GetScoreByValue(this IEnumerable<IDie> dice)
