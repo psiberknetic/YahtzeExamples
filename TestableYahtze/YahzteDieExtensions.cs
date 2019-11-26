@@ -62,12 +62,12 @@ namespace TestableYahtze
                                                        .SequenceEqual(new[] { 2, 3 }));
         }
 
-        public static bool GetScoreByValue(this IEnumerable<IDie> dice)
+        public static int GetScoreByValue(this IEnumerable<IDie> dice, int value)
         {
             throw new NotImplementedException();
         }
 
-        public static bool GetTotalScore(this IEnumerable<IDie> dice)
+        public static int GetTotalScore(this IEnumerable<IDie> dice)
         {
             throw new NotImplementedException();
         }
