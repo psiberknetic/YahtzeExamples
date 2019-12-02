@@ -9,7 +9,7 @@ namespace YahtzeOriginal
     {
         public void TakeTurn()
         {
-            var dice = MakeRoll();
+            var dice = RollDice();
 
             //A bunch of Yahtze code...
             //Player has rolled dice and now has the dice they'd like to score
@@ -25,7 +25,7 @@ namespace YahtzeOriginal
             //etc...
         }
 
-        private IEnumerable<Die> MakeRoll()
+        private IEnumerable<Die> RollDice()
         {
             return Enumerable.Range(1, 5).Select(_ => new Die());
         }
