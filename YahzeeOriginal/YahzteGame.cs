@@ -9,9 +9,11 @@ namespace YahtzeOriginal
     {
         public void TakeTurn()
         {
+            var dice = MakeRoll();
+
             //A bunch of Yahtze code...
             //Player has rolled dice and now has the dice they'd like to score
-            var dice = Enumerable.Range(1, 5).Select(_ => new Die());
+
             if (IsYahtze(dice))
             {
                 //score as Yahtze
@@ -21,6 +23,11 @@ namespace YahtzeOriginal
                 // score as Full House
             }
             //etc...
+        }
+
+        private IEnumerable<Die> MakeRoll()
+        {
+            return Enumerable.Range(1, 5).Select(_ => new Die());
         }
 
         // Note these private functions are very difficult to test. We can't write tests for 
